@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'mailController@index')->middleware('auth');
+Route::get('/mail', 'mailController@index');
+Route::get('/mails/{mail}', 'mailController@show');
+Route::get('/posts/create', 'mailController@create')->name("mail");
+
+Route::post('/posts', 'mailController@store');
+Route::get('/posts/{mail}/edit','mailController@edit');
+
+//ブログ投稿編集画面表示　URI:/posts/{mail}/　リクエスト種別:GET　コントローラ:edit関数
+Route::put('/mails/{mail}', 'mailController@update');
+//ブログ投稿編集実行　URI:/posts/{mail}　リクエスト種別：PUT　コントローラ：mailController:update関数
+Route::get('/posts/guardiancreate','mailController@create')->name("guardian");
+Route::put('/posts/{mail}', 'mailController@delete');
+//Route::get('/posts/{id}', 'mailController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
