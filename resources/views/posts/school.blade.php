@@ -60,32 +60,4 @@
                             </div>
                         </div>
                     </div>
-            
-                    <div class="col-sm-6">
-                        <div class="card" style="width: 35rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">保護者連絡</h5>
-                                <div class='posts'>
-                                    [<a href='/posts/create'>保護者宛て連絡追加</a>]
-                                    @foreach($parentMails as $parentMail)
-                                        <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="mail" style="display:inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit">削除</button>
-                                            <div class='post'>
-                                                <h2 class='title'>{{ $parentMail->title }}</h2>
-                                                <a href="/mails/{{ $parentMail->id }}">{{ $parentMail->title}}> </a>
-                                                <p class='body'>{{ $parentMail->body }}</p>
-                                            </div>
-                                         </form>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-            </center>
-        </body>
-</html>
-@endsection
+                </div>
