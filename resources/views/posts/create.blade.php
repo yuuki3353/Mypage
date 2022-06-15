@@ -8,6 +8,28 @@
         <title>Blog</title>
     </head>
         <body>
+            <div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href='/posts/school'>学校連絡</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='/posts/guarudian'>保護者連絡</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='/posts/create'>追加・編集</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">三者面談[予約]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">問い合わせ</a>   
+                    </li>
+                </ul>
+            </div>
             <h1>追加</h1>
             <form action="/posts" method="POST">
                 @csrf

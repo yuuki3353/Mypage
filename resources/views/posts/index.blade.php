@@ -20,16 +20,19 @@
                             <a class="nav-link active" aria-current="page" href="#">ホーム</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">学校連絡</a>
+                            <a class="nav-link " href='/posts/school'>学校連絡</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">保護者連絡</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">追加・編集</a>
+                            <a class="nav-link" href='/posts/create'>追加・編集</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">問い合わせ</a>
+                            <a class="nav-link" href="#">三者面談[予約]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">問い合わせ</a>   
                         </li>
                     </ul>
                 </div>
@@ -51,7 +54,6 @@
                                             <div class='post'>
                                                 <h2 class='title'>{{ $schoolmail->title }}</h2>
                                                 <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
-                                                <p class='body'>{{ $schoolmail->body }}</p>
                                             </div>
                                         </form>
                                     @endforeach

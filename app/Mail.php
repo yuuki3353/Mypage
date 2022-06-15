@@ -37,3 +37,4 @@ use Illuminate\Database\Eloquent\SoftDeletes;
         
         
     }
+    //○○.php(Mモデル)はDBから情報を取ってきてそれをControllerに送る役割を持っている
