@@ -17,25 +17,25 @@ class mailController extends Controller
 {
         public function index(Mail $mail, Guardian $guardian)//index.blaad
     {
-        $parent="guardians";
+            $parent="guardians";
+            
         
-    
-        return view('posts/index')->with([
-            'schoolMails' => $mail->mailsForSchool(),
-            'parentMails' => $mail->mailsForParent(),
-            'guardians' =>$guardian->get()
-            ]);
+            return view('posts/index')->with([
+                'schoolMails' => $mail->mailsForSchool(),
+                'parentMails' => $mail->mailsForParent(),
+                'guardians' =>$guardian->get()
+                ]);
     }
     
         public function show(Mail $mail)
     {
-        return view('posts/show')->with(['mail' => $mail]);
+            return view('posts/show')->with(['mail' => $mail]);
     }
 
         public function create(Category $category,Mail $mail, Guardian $guardian)
     {
-         $name=\Route::currentRouteName();
-        return view('posts/create')->with(['categories' =>$category->get(),"name"=>$name , 'mail'=>$mail->get(), 'guardian'=>$guardian->get()]);
+             $name=\Route::currentRouteName();
+            return view('posts/create')->with(['categories' =>$category->get(),"name"=>$name , 'mail'=>$mail->get(), 'guardian'=>$guardian->get()]);
     }
     
         public function store(MailSaveRequest $request, Mail $mail, Guardian $guardian, Category $category)
@@ -43,25 +43,34 @@ class mailController extends Controller
             $mail->fill($request->input('mail'))->save();
             return redirect('/');
     }
+    
+        public function school(Mail $mail)
+    {
+            return view('posts/school')->with(['mail'=> $mail->get()]);    
+    }
+    
+        public function guardian(Mail $mail)
+    {
+            return view('posts/guardian')->with(['mail'=> $mail->get()]);
+    }
         
         public function edit(Mail $mail)
     {
-        return view('posts/edit')->with(['mail' => $mail]);
+            return view('posts/edit')->with(['mail' => $mail]);
     }
         
         public function update(MailRequest $request, Mail $mail)
     {
-        $input_mail = $request['mail'];
-        $mail->fill($input_mail)->save();
+            $input_mail = $request['mail'];
+            $mail->fill($input_mail)->save();
         
-        
-        return redirect('/mails/' . $mail->id);
+            return redirect('/mails/' . $mail->id);
     }
  
         public function delete(Mail $mail)
     {
-        $mail->delete();
-        return redirect('/');
+            $mail->delete();
+            return redirect('/');
     }    
     
 }

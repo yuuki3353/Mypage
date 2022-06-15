@@ -5,7 +5,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>学校連絡ページ</title>
+        <title>保護者連絡ページ</title>
         <!-- Fonts -->
         <link rel="stylesheet" href="./css/index.blade.css">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -23,7 +23,7 @@
                             <a class="nav-link " href='/posts/school'>学校連絡</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href='/posts/guarudian'>保護者連絡</a>
+                            <a class="nav-link" href='/posts/guardian'>保護者連絡</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href='/posts/create'>追加・編集</a>
@@ -43,20 +43,20 @@
                         <div class="card" style="width: 35rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">学校連絡</h5>
+                                <h5 class="card-title">保護者連絡</h5>
                                 <div class='posts'>
-                                    [<a href='/posts/create'>学校連絡追加</a>] 
-                                    @foreach ($mail as $schoolmail) {{--($mail as $schoolmailとはmailという変数の中から1つずつschoolmailという変数を取り出すという意味)school.blade.phpはM(contorollerとみやり取りしてる)--}}
-                                        <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="mail" style="display:inline">
+                                    [<a href='/posts/create'>保護者連絡追加</a>] 
+                                    @foreach($mail as $parentMail)
+                                        <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="mail" style="display:inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">削除</button>
                                             <div class='post'>
-                                                <h2 class='title'>{{ $schoolmail->title }}</h2>
-                                                <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
-                                                <p class='body'>{{ $schoolmail->body }}</p>
+                                                <h2 class='title'>{{ $parentMail->title }}</h2>
+                                                <a href="/mails/{{ $parentMail->id }}">{{ $parentMail->title}}> </a>
+                                                <p class='body'>{{ $parentMail->body }}</p>
                                             </div>
-                                        </form>
+                                         </form>
                                     @endforeach
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>

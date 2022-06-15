@@ -16,7 +16,8 @@ Route::get('/', 'mailController@index')->middleware('auth');
 Route::get('/mail', 'mailController@index');
 Route::get('/mails/{mail}', 'mailController@show');
 Route::get('/posts/create', 'mailController@create')->name("mail");
-
+Route::get('/posts/school', 'mailController@school');
+Route::get('/posts/guarudian', 'mailController@guardian');
 Route::post('/posts', 'mailController@store');
 Route::get('/posts/{mail}/edit','mailController@edit');
 
