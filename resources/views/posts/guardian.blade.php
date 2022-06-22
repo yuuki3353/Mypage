@@ -17,22 +17,19 @@
                 <div>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                            <a class="nav-link"href='/posts/index'>ホーム</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href='/posts/school'>学校連絡</a>
+                            <a class="nav-link" href='/posts/school'>学校連絡</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href='/posts/guardian'>保護者連絡</a>
+                            <a class="nav-link active" aria-current="page" href='/posts/guardian'>保護者連絡</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href='/posts/create'>追加・編集</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">三者面談[予約]</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">問い合わせ</a>   
+                            <a class="nav-link" href='/posts/calendar'>三者面談[予約]</a>
                         </li>
                     </ul>
                 </div>

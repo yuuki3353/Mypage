@@ -14,11 +14,20 @@
 
 Route::get('/', 'mailController@index')->middleware('auth');
 Route::get('/mail', 'mailController@index');
+Route::get('/posts/index', 'mailController@index');
+//Hoomページ
 Route::get('/mails/{mail}', 'mailController@show');
 Route::get('/posts/create', 'mailController@create')->name("mail");
+//追加・編集ページ
 Route::get('/posts/school', 'mailController@school');
+//学校連絡ページ
+
 Route::get('/posts/guarudian', 'mailController@guardian');
+//保護者連絡ページ
+
+Route::get('/posts/calendar', 'mailController@calendar');
 Route::post('/posts', 'mailController@store');
+
 Route::get('/posts/{mail}/edit','mailController@edit');
 
 //ブログ投稿編集画面表示　URI:/posts/{mail}/　リクエスト種別:GET　コントローラ:edit関数
@@ -32,4 +41,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('/calendar', function(){
+    return view('calendar');
+});

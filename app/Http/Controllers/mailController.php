@@ -53,6 +53,10 @@ class mailController extends Controller
     {
             return view('posts/guardian')->with(['mail'=> $mail->get()]);
     }
+        public function calendar(Mail $mail)
+    {
+            return view('posts/calendar')->with(['mail'=> $mail->get()]);
+    }
         
         public function edit(Mail $mail)
     {
