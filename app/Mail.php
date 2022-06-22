@@ -27,7 +27,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
         
         public function mailsForSchool(){
             
-          return $this->where('category_id', 1)->orderBy('created_at', 'DESC')->get();
+          return $this->where('category_id', 1)->orderBy('created_at', 'DESC')->limit(5)->get();
+        
         }
         
         public function mailsForParent(){
@@ -35,6 +36,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
           return $this->where('category_id', 2)->orderBy('created_at', 'DESC')->get();
         }
         
+        public function getByLimit(int $limit_count = 5)
+        {
+            // updated_atで降順に並べたあと、limitで件数制限をかける
+            return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
+        }
         
     }
     //○○.php(Mモデル)はDBから情報を取ってきてそれをControllerに送る役割を持っている

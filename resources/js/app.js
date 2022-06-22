@@ -30,3 +30,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+require("./calendar");　//処理上の問題で位置を変更
