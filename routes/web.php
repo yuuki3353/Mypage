@@ -22,7 +22,7 @@ Route::get('/posts/create', 'mailController@create')->name("mail");
 Route::get('/posts/school', 'mailController@school');
 //学校連絡ページ
 
-Route::get('/posts/guarudian', 'mailController@guardian');
+Route::get('/posts/guardian', 'mailController@guardian');
 //保護者連絡ページ
 
 Route::get('/posts/calendar', 'mailController@calendar');

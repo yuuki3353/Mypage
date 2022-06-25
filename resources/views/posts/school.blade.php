@@ -23,7 +23,7 @@
                             <a class="nav-link active" aria-current="page" href='/posts/school'>学校連絡</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href='/posts/guarudian'>保護者連絡</a>
+                            <a class="nav-link" href='/posts/guardian'>保護者連絡</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href='/posts/create'>追加・編集</a>

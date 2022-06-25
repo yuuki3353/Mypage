@@ -31,6 +31,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href='/posts/calendar'>三者面談[予約]</a>
                             </li>
+                            <li>
+                                <i class="bi bi-envelope-check-fill"></i>
+                            </li>
                         </ul>
                     </div>
                     
@@ -46,7 +49,7 @@
                         </div>
                     </div>
                         <div>
-                            <div id='calendar' class="w-75 p-3"></div>
+                            <div id='calendar' class="w-75 p-3" style="background:url('/img/06.jpg');　background-size: cover;" ></div>
                         </div>
                         
                         
