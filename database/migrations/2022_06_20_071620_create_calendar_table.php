@@ -13,7 +13,7 @@ class CreatecalendarTable extends Migration
      */
     public function up()
     {
-        Schema::create('booking.phps', function (Blueprint $table) {
+        Schema::create('booking', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreatecalendarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking.phps');
+        Schema::dropIfExists('booking');
     }
 }
