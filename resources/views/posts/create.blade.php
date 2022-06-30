@@ -2,11 +2,6 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-    </head>
         <body>
             <div>
                 <ul class="nav nav-tabs">
@@ -59,5 +54,4 @@
                 </form>
             </center>
         </body>
-</html>
 @endsection

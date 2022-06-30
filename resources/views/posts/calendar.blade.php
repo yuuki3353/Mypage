@@ -46,19 +46,17 @@
                         <div class="card-header" style="text-aling: center;">予約</div>
                         <div class="card-body">
                             <ul>
-                                <li class="text-senter">※カレンダーより、ご希望の予定日をお選び下さい。</li>
-                                <li class="text-senter">※予約は次回予約のみお取り頂けます。</li>
-                                <li class="text-senter">※時間を指定される場合、Weekボタンから予約が可能です。</li>
-                                <li class="text-senter">※listにて予約確認が可能です。</li>
+                                <li class="text-senter">※以下の手順に沿って予約して下さい</li>
+                                <li class="text-senter">①カレンダー右上の[Week]を選択して下さい。</li>
+                                <li class="text-senter">②時間帯を選択して下さい。</li>
+                                <li class="text-senter">③学年・組・氏名の順番に記入して下さい。</li>
+                                <li class="text-senter">※[list]より予約確認が可能です。</li>
                             </ul>
                         </div>
                     </div>
-                        <div>
-                            <div id='calendar' class="w-75 p-3" style="background:url('/img/06.jpg');　background-size: cover;" ></div>
-                        </div>
+                        <div id='calendar' class=" mt-5 w-75 p-3" style="background:url('/img/06.jpg'); background-size: cover; background-repeat: no-repeat; " ></div>
                         
-                        
-                    </form>                        
+                    </form>
                 </center>
             </body>
 @endsection

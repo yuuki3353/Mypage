@@ -44,3 +44,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/calendar', function(){
     return view('calendar');
 });
+
+Route::post('/schedule-add', 'mailController@scheduleAdd')->name('schedule-add');
+Route::post('/schedule-get', 'mailController@scheduleGet')->name('schedule-get');
