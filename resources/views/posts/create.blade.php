@@ -2,11 +2,6 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-    </head>
         <body>
             <div>
                 <ul class="nav nav-tabs">
@@ -17,7 +12,7 @@
                         <a class="nav-link" href='/posts/school'>学校連絡</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='/posts/guarudian'>保護者連絡</a>
+                        <a class="nav-link" href='/posts/guardian'>保護者連絡</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
@@ -59,5 +54,4 @@
                 </form>
             </center>
         </body>
-</html>
 @endsection
