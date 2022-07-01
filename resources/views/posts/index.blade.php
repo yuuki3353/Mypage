@@ -40,6 +40,7 @@
                                             <div class='post'>
                                                 <h2 class='title'>{{ $parentMail->title }}</h2>
                                                 <a href="/mails/{{ $parentMail->id }}">{{ $parentMail->title}}> </a>
+                                                <p>{{date('Y年m月d日', strtotime($parentMail->created_at))}}</p>
                                             </div>
                                         </form>
                                     </a>
@@ -52,41 +53,37 @@
                         </li>
                     </ul>
                 </div>
-                <
+                
                             
                 <br>
                 <div class="container">
                     <div class="mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                        </div>
-                        <i class="bi bi-envelope-check-fill"></i>
-                        <img id=container scr="('/img/.jpg');　background-size: cover;" >
-                            <div class="card-body">
-                                <h5 class="card-title">○○小学校</h5>
-                                <p class="card-text">ようこそホームページへ</p>
+                        <div class="homepage">
+                            <div class="homepagetitle">
+                                <h3>○○小学校</h3>
+                                <p>ようこそホームページへ</p>
                             </div>
-                      </div>
+                        </div>
                     </div>
                 
                     <br>
                    
                     <div class="row">
                         <div class="col-6">
-                            <div class="card" style="width: 33rem;">
-                                <img src="" class="card-img-top" alt="">
+                            <div class="card border2" style="width: 25rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">学校連絡</h5>
+                                    <h5 class="card-title border5">学校連絡</h5>
                                     <div class='posts'>
                                         [<a href='/posts/create'>学校連絡追加</a>] 
                                         @foreach ($schoolMails as $schoolmail)
-                                            <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="mail" style="display:inline">
+                                            <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="post" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">削除</button>
                                                 <div class='post'>
                                                     <h2 class='title'>{{ $schoolmail->title }}</h2>
                                                     <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
+                                                    <p>{{date('Y年m月d日', strtotime($schoolmail->created_at))}}</p>
                                                 </div>
                                             </form>
                                         @endforeach
@@ -96,25 +93,28 @@
                         </div>
                 
                         <div class="col-6">
-                            <div class="card" style="width: 33rem;">
-                                <img src="" class="card-img-top" alt="">
+                            <div class="card border2" style="width: 25rem;">
+                              <div class="pic">
                                 <div class="card-body">
-                                    <h5 class="card-title">保護者連絡</h5>
+                                    <h5 class="card-title border5">保護者連絡</h5>
                                     <div class='posts'>
                                         [<a href='/posts/create'>保護者宛て連絡追加</a>]
                                         @foreach($parentMails as $parentMail)
-                                            <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="mail" style="display:inline">
+                                            <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="post" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">削除</button>
                                                 <div class='post'>
                                                     <h2 class='title'>{{ $parentMail->title }}</h2>
                                                     <a href="/mails/{{ $parentMail->id }}">{{ $parentMail->title}}> </a>
+                                                    <p>{{date('Y年m月d日', strtotime($parentMail->created_at))}}</p>
+                                                    
                                                 </div>
                                              </form>
                                         @endforeach
                                     </div>
                                 </div>
+                              </div>
                             </div>
                         </div>
                     </div>    
@@ -122,6 +122,7 @@
                 </footer>
             </body>
     </html>    
+    
             <script>
                     'use strict';
                 {

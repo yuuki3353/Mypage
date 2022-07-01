@@ -12,7 +12,7 @@
                         <a class="nav-link" href='/posts/school'>学校連絡</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='/posts/guardian'>保護者連絡</a>
+                        <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て連絡</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
             <center>
-                <h1>追加</h1>
+                <h2>追加</h2>
                 <form action="/posts" method="POST">
                     @csrf
                     <div class="category">
@@ -42,7 +42,6 @@
                             <input type="text" name="mail[title]" placeholder="タイトル" value="{{ old('mail.title') }}"/>
                             <p class="title__error" style="color:red">{{ $errors->first('mail.title') }}</p>
                             <input name="mail[user_id]" type="hidden" value={{Auth::id()}} />
-                            <input type="datetime-local">
                         </div>
                             <div class="body">
                             <h3>内容</h3>
