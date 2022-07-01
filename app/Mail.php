@@ -42,5 +42,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
             return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
         }
         
+        public static function getDayOfWeek($value){
+            
+            $week = [
+                '日',//
+                '月',//
+                '火',//
+                '水',//
+                '木',//
+                '金',//
+                '土',//
+                ];
+                
+           // return date('w', $this->created_at);
+           // return $week[$date];
+        }
     }
     //○○.php(Mモデル)はDBから情報を取ってきてそれをControllerに送る役割を持っている

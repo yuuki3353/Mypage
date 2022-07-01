@@ -73,3 +73,50 @@ body {
     background-image:url(‘/img/00.jpg’);
     background-position: top left
 }
+
+.homepage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepagetitle {
+  display: flex;
+  min-width: 375px;
+  padding: 25px 50px;
+  justify-content: space-between;
+  background-color:whitesmoke;
+  border: solid 1px skyblue;
+  box-shadow:3px 3px 10px lightgray;
+}
+
+.homepagetitle > h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.homepagetitle > p {
+  padding-top: 3px;
+  margin-bottom: 0;
+}
+
+.border2{
+  border: double 5px red;
+}
+
+
+.border5{
+  border-bottom:1px solid gray;
+}
+
+.pic {
+   background-image:url('/img/06.jpg');
+   background-position: center;
+   background-size: cover;
+}
+
+.card-body {
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+
