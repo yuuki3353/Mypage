@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('switches_id');
             //Userテーブル内にid,Name,password,class_idのカラムを追加した状態
             //migrationファイルに上記のカラムを追加し、migrationコマンドを実行する事でDB上に一気に情報を追記してくれる。
         });

@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'mailController@index')->middleware('auth');
+Route::get('/', 'mailController@index')->middleware('auth');// ログインしないとアクセスできない
 Route::get('/mail', 'mailController@index');
 Route::get('/posts/index', 'mailController@index');
 //Hoomページ
@@ -35,11 +35,10 @@ Route::put('/mails/{mail}', 'mailController@update');
 Route::get('/posts/guardiancreate','mailController@create')->name("guardian");
 Route::delete('/posts/{mail}', 'mailController@delete');
 Route::get('/posts/{mail}/edit','mailController@edit');
-//Route::get('/posts/{id}', 'mailController@index');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register/re', 'UserController@register');//アカウント新規登録画面の表示
 
 Route::get('/calendar', function(){
     return view('calendar');

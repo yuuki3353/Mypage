@@ -2,6 +2,7 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
 @section('content')
+        
         <body>
             <div>
                 <ul class="nav nav-tabs">
