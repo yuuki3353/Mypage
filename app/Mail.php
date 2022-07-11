@@ -11,7 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
             'title',
             'body' ,
             'user_id',
-            'category_id'
+            'category_id',
+            'switches_id'
         ];
         //
         
@@ -56,6 +57,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
                 
            // return date('w', $this->created_at);
            // return $week[$date];
+        }
+        
+        public function switches()
+        {
+            return $this->belongsTo('App\Switches');
+            
         }
     }
     //○○.php(Mモデル)はDBから情報を取ってきてそれをControllerに送る役割を持っている
