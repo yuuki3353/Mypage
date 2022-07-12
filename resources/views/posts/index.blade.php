@@ -16,9 +16,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て連絡</a>
                         </li>
+                        @if(Auth::user()->id ==1)
                         <li class="nav-item">
-                            <a class="nav-link" href='/posts/create'>追加・編集</a>
+                            <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
                         </li>
+                        @else
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href='/posts/calendar'>三者面談[予約]</a>
                         </li>
@@ -61,7 +64,7 @@
                         <div class="homepage">
                             <div class="homepagetitle">
                                 <h3>○○小学校</h3>
-                                <p>ようこそホームページへ</p>
+                                <p>のホームページへようこそ！</p>
                             </div>
                         </div>
                     </div>
@@ -71,22 +74,24 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="card border2" style="width: 25rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title border5">学校連絡</h5>
-                                    <div class='posts'>
-                                        [<a href='/posts/create'>学校連絡追加</a>] 
-                                        @foreach ($schoolMails as $schoolmail)
-                                            <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="post" style="display:inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit">削除</button>
-                                                <div class='post'>
-                                                    <h2 class='title'>{{ $schoolmail->title }}</h2>
-                                                    <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
-                                                    <p>{{date('Y年m月d日', strtotime($schoolmail->created_at))}}</p>
-                                                </div>
-                                            </form>
-                                        @endforeach
+                                <div class="pic">
+                                    <div class="card-body">
+                                        <h5 class="card-title border5">学校連絡</h5>
+                                        <div class='posts'>
+                                            [<a href='/posts/create'>学校連絡追加</a>] 
+                                            @foreach ($schoolMails as $schoolmail)
+                                                <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="post" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit">削除</button>
+                                                    <div class='post'>
+                                                        <h2 class='title'>{{ $schoolmail->title }}</h2>
+                                                        <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
+                                                        <p>{{date('Y年m月d日', strtotime($schoolmail->created_at))}}</p>
+                                                    </div>
+                                                </form>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,9 +101,9 @@
                             <div class="card border2" style="width: 25rem;">
                               <div class="pic">
                                 <div class="card-body">
-                                    <h5 class="card-title border5">保護者連絡</h5>
+                                    <h5 class="card-title border5">{{Auth::user()->name}}様宛て連絡</h5>
                                     <div class='posts'>
-                                        [<a href='/posts/create'>保護者宛て連絡追加</a>]
+                                        [<a href='/posts/create'>{{Auth::user()->name}}様宛て連絡追加</a>]
                                         @foreach($parentMails as $parentMail)
                                             <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="post" style="display:inline">
                                                 @csrf

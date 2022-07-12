@@ -14,7 +14,7 @@ let calendar = new Calendar(calendarEl,
         {
             left: "prev,next today",
             center: "title",
-            right: "dayGridMonth,timeGridWeek,listWeek",
+            right: "dayGridMonth,timeGridWeek,listWeek","Delete",
         },
         locale: "ja",
     
