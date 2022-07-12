@@ -15,9 +15,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href='/posts/guardian'>{{Auth::user()->name}}様宛て連絡絡</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href='/posts/create'>追加・編集</a>
-                    </li>
+                     @if(Auth::user()->id ==1)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
+                        </li>
+                    @else
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href='/posts/calendar'>三者面談[予約]</a>
                     
@@ -30,7 +33,7 @@
                         <div class="card" style="width: 35rem;">
                             <img src="" class="card-img-top" alt="">
                             <div class="card-body">
-                                <h5 class="card-title">保護者連絡</h5>
+                                <h5 class="card-title">{{Auth::user()->name}}様宛て</h5>
                                 <div class='posts'>
                                     [<a href='/posts/create'>保護者連絡追加</a>] 
                                     @foreach($mail as $parentMail)
