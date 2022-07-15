@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 
+
 var calendarEl = document.getElementById("calendar");
 
 let calendar = new Calendar(calendarEl, 
@@ -14,7 +15,7 @@ let calendar = new Calendar(calendarEl,
         {
             left: "prev,next today",
             center: "title",
-            right: "dayGridMonth,timeGridWeek,listWeek","Delete",
+            right: "dayGridMonth,timeGridWeek,listWeek",
         },
         locale: "ja",
     
@@ -84,5 +85,8 @@ let calendar = new Calendar(calendarEl,
                         alert("登録に失敗しました");
                     });
         },
+        
+       
+        
     });
 calendar.render();
