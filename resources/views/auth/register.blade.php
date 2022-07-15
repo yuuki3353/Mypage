@@ -60,15 +60,18 @@
                             </div>
                         </div>
                         
-                        
+                        @php
+                        use App\Switches;
+                        $switches=Switches::query()->get(
+                        @endphp
                         
                         
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Users Identity') }}</label>
                             <div class="col-md-6">
                                 <select id="switches" type="select" class="form-control @error('switches_id') is-invalid @enderror" name="switches_id" value="{{ old('email') }}" required autocomplete="email">
-                                @foreach($switches as $switches)
-                                    <option value="{{ $switches->id }}">{{ $switches->name }}</option>
+                                @foreach($switches as $switch)
+                                    <option value="{{ $switch->id }}">{{ $switch->name }}</option>
                                 @endforeach
                                 </select>
                             </div>

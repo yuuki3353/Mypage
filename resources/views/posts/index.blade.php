@@ -78,12 +78,19 @@
                                     <div class="card-body">
                                         <h5 class="card-title border5">学校連絡</h5>
                                         <div class='posts'>
+                                            @if(Auth::user()->id ==1)
+                                            @csef
                                             [<a href='/posts/create'>学校連絡追加</a>] 
+                                            @else
+                                            @endif
                                             @foreach ($schoolMails as $schoolmail)
                                                 <form action="/posts/{{ $schoolmail->id }}" id="form_{{ $schoolmail->id }}" method="post" style="display:inline">
+                                                    @if(Auth::user()->id ==1)
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit">削除</button>
+                                                    @else
+                                                    @endif
                                                     <div class='post'>
                                                         <h2 class='title'>{{ $schoolmail->title }}</h2>
                                                         <a href="/mails/{{ $schoolmail->id }}">{{ $schoolmail->title}}> </a>
@@ -103,12 +110,19 @@
                                 <div class="card-body">
                                     <h5 class="card-title border5">{{Auth::user()->name}}様宛て連絡</h5>
                                     <div class='posts'>
+                                        @if(Auth::user()->id ==1)
+                                        @csef
                                         [<a href='/posts/create'>{{Auth::user()->name}}様宛て連絡追加</a>]
+                                        @else
+                                        @endif
                                         @foreach($parentMails as $parentMail)
                                             <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="post" style="display:inline">
+                                                @if(Auth::user()->id ==1)
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">削除</button>
+                                                @else
+                                                @endif
                                                 <div class='post'>
                                                     <h2 class='title'>{{ $parentMail->title }}</h2>
                                                     <a href="/mails/{{ $parentMail->id }}">{{ $parentMail->title}}> </a>

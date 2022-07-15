@@ -9,8 +9,9 @@ use App\Switches;
 
 class UserController extends Controller
 {
-    public function register(switches $switches)
+    public function register(Switches $switches)
     {
+        dd($switches->get());
         return view('auth/register')->with(['switches'=> $switches->get()]);
     }
 }

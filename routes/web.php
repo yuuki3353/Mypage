@@ -46,3 +46,6 @@ Route::get('/calendar', function(){
 
 Route::post('/schedule-add', 'mailController@scheduleAdd')->name('schedule-add');
 Route::post('/schedule-get', 'mailController@scheduleGet')->name('schedule-get');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
