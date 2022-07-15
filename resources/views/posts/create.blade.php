@@ -36,7 +36,7 @@
                             <section id="modal" class="hidden">
                                 <p>{{Auth::user()->name}}様に新しいメールが届きました。<br>
                                 
-                                @foreach($parentMails as $parentMail)
+                                @foreach($mail as $parentMail)
                                 <a href='/posts/school'>
                                     <form action="/posts/{{ $parentMail->id }}" id="form_{{ $parentMail->id }}" method="mail" style="display:inline">
                                         <div class='post'>
