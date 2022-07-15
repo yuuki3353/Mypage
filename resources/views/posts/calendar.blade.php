@@ -23,11 +23,11 @@
                                 <a class="nav-link " href='/posts/school'>学校連絡</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て連絡</a>
+                                <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て</a>
                             </li>
                              @if(Auth::user()->id ==1)
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
+                                <a class="nav-link" href='/posts/create'>追加・編集</a>
                             </li>
                             @else
                             @endif
@@ -61,7 +61,10 @@
                             </div>
                         </div>
                     </div>
-                        <div id='calendar' class=" mt-5 w-75 p-3" style="background:url('/img/06.jpg'); background-size: cover; background-repeat: no-repeat; " ></div>
+                        <div id='calendar' class=" mt-5 w-75 p-3" style="background:url('/img/06.jpg'); background-size: cover; background-repeat: no-repeat; " >
+                            
+                            
+                        </div>
                         
                     </form>
                 </center>

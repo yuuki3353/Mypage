@@ -24,11 +24,11 @@
                                 <a class="nav-link active" aria-current="page" href='/posts/school'>学校連絡</a>
                             </li>
                              <li class="nav-item">
-                                <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て連絡</a>
+                                <a class="nav-link" href='/posts/guardian'>{{Auth::user()->name}}様宛て</a>
                             </li>
                              @if(Auth::user()->id ==1)
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href='/posts/create'>追加・編集</a>
+                                <a class="nav-link" href='/posts/create'>追加・編集</a>
                             </li>
                             @else
                             @endif

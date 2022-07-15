@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\parentMails;
 
 class mailController extends Controller
 {
@@ -34,10 +35,10 @@ class mailController extends Controller
             return view('posts/show')->with(['mail' => $mail]);
     }
 
-        public function create(Category $category,Mail $mail, Guardian $guardian)
+        public function create(Category $category,Mail $mail, Guardian $guardian )
     {
              $name=\Route::currentRouteName();
-            return view('posts/create')->with(['categories' =>$category->get(),"name"=>$name , 'mail'=>$mail->get(), 'guardian'=>$guardian->get()]);
+            return view('posts/create')->with(['categories' =>$category->get(),"name"=>$name , 'mail'=>$mail->get() ]);
     }
     
         public function store(MailSaveRequest $request, Mail $mail, Guardian $guardian, Category $category)
